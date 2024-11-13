@@ -5,6 +5,7 @@ public class Lazienka {
     public Umywalka[] umywalek;
     public Pralka[] pralek;
     public Szafka[] szafek;
+    public Drzwi[] drzwi;
 
     public Lazienka() {
         System.out.println("--------Tworzenie lazienki----------");
@@ -36,6 +37,12 @@ public class Lazienka {
     public class Szafka {
         public Szafka() {
 
+        }
+    }
+    public void tworzenieDrzwi(int iloscDrzwi){
+        drzwi= new Drzwi[iloscDrzwi];
+        for(int i=0;i<iloscDrzwi;i++){
+            drzwi[i]=new Drzwi();
         }
     }
 

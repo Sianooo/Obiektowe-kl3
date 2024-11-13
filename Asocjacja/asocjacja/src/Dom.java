@@ -44,4 +44,5 @@ public class Dom {
             lazienki[i]=new Lazienka();
         }
     }
+
 }

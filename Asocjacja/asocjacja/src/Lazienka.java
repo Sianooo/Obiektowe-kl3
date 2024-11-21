@@ -1,11 +1,10 @@
-public class Lazienka {
+public class Lazienka extends Pomieszczenie {
 
     public Prysznic[] prysznice;
     public Wanna[] wanny;
     public Umywalka[] umywalek;
     public Pralka[] pralek;
     public Szafka[] szafek;
-    public Drzwi[] drzwi;
 
     public Lazienka() {
         System.out.println("--------Tworzenie lazienki----------");
@@ -39,13 +38,6 @@ public class Lazienka {
 
         }
     }
-    public void tworzenieDrzwi(int iloscDrzwi){
-        drzwi= new Drzwi[iloscDrzwi];
-        for(int i=0;i<iloscDrzwi;i++){
-            drzwi[i]=new Drzwi();
-        }
-    }
-
     public void tworzeniePralki(int iloscPralek) {
         pralek = new Pralka[iloscPralek];
         for (int i = 0; i < iloscPralek; i++) {

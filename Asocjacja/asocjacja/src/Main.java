@@ -71,10 +71,13 @@ public class Main {
 //        domeczek.tworzenieLazienki(1);
 //        domeczek.tworzeniePokoi(1);
 
-        dom1.pokoje[0].drzwi[0].funkcjonkaDoDrzwi(dom1.pokoje[0]);
-        dom1.pokoje[0].drzwi[0].funkcjonkaDoDrzwi(dom1.lazienki[0]);
-        dom1.pokoje[0].drzwi[0].funkcjonkaDoDrzwi(dom1.kuchni[0]);
+        dom1.pokoje[0].drzwi[0].przejdzDoPomieszczenia(dom1.pokoje[0]);
+        dom1.pokoje[0].drzwi[0].przejdzDoPomieszczenia(dom1.lazienki[0]);
+        dom1.pokoje[0].drzwi[0].przejdzDoPomieszczenia(dom1.kuchni[0]);
 
+//        dom1.pokoje[0].drzwi[0].przejdzDoPomieszczenia();
+//        dom1.lazienki[0].drzwi[0].przejdzDoPomieszczenia();
+//        dom1.kuchni[0].drzwi[0].przejdzDoPomieszczenia();
 
     }
 }

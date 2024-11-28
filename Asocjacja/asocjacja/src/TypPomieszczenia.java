@@ -1,5 +1,6 @@
-public enum TypPomieszczenia {
-    kuchni,
-    lazienki,
-    pokoi,
+public enum TypPomieszczenia
+{
+    Kuchnia,
+    Lazienka,
+    Pokoj
 }

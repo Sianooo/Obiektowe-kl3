@@ -2,20 +2,32 @@ public class Dom {
 
     public Drzwi[] drzwi;
     public Okno[] okna;
-    public Pokoj[] pokoje;
-    public Kuchnia[] kuchni;
-    public Lazienka[] lazienki;
+    public Pomieszczenie[] pokoje;
+    public Pomieszczenie[] kuchni;
+    public Pomieszczenie[] lazienki;
 
-//    public Dom(){
-//        System.out.println("--------Tworzenie domu----------");
+
+//    public Dom()
+//    {
+//        pokoje = new Pomieszczenie[1];
+//        lazienki = new Pomieszczenie[1];
+//        kuchni = new Pomieszczenie[1];
+//
+//        pokoje[0] = new Pomieszczenie(TypPomieszczenia.Pokoj, 1);
+//        lazienki[0] = new Pomieszczenie(TypPomieszczenia.Lazienka, 1);
+//        kuchni[0] = new Pomieszczenie(TypPomieszczenia.Kuchnia, 1);
+//
+////        drzwiDoPomieszczenia(pokoje[0], lazienki[0]);
+////        drzwiDoPomieszczenia(pokoje[0], kuchni[0]);
 //    }
-
-    public void tworzenieDrzwi(int iloscDrzwi){
-        drzwi= new Drzwi[iloscDrzwi];
-        for(int i=0;i<iloscDrzwi;i++){
-            drzwi[i]=new Drzwi();
-        }
-    }
+//
+//
+//    public void tworzenieDrzwi(int iloscDrzwi){
+//        drzwi= new Drzwi[iloscDrzwi];
+//        for(int i=0;i<iloscDrzwi;i++){
+//            drzwi[i]=new Drzwi();
+//        }
+//    }
 
     public void tworzenieokna(int iloscOkien){
         okna= new Okno[iloscOkien];

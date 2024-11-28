@@ -10,6 +10,14 @@ public class Lazienka extends Pomieszczenie {
         System.out.println("--------Tworzenie lazienki----------");
     }
 
+
+    public void tworzenieDrzwi(int iloscDrzwi){
+        drzwi= new Drzwi[iloscDrzwi];
+        for(int i=0;i<iloscDrzwi;i++){
+            drzwi[i]=new Drzwi();
+        }
+    }
+
     public class Prysznic {
         public Prysznic() {
         }

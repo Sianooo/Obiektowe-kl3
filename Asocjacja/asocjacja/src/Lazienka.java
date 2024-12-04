@@ -6,7 +6,9 @@ public class Lazienka extends Pomieszczenie {
     public Pralka[] pralek;
     public Szafka[] szafek;
 
-    public Lazienka() {
+    public Lazienka(String nazwa) {
+        super.nazwa=nazwa;
+        super.typ=TypPomieszczenia.LAZIENKA;
         System.out.println("--------Tworzenie lazienki----------");
     }
 

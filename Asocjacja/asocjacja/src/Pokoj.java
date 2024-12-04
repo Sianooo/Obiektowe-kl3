@@ -1,5 +1,7 @@
 public class Pokoj extends Pomieszczenie{
-    public Pokoj(){
+    public Pokoj(String nazwa){
+        super.nazwa=nazwa;
+        super.typ=TypPomieszczenia.POKOJ;
         System.out.println("--------Tworzenie pokoju----------");
     }
 

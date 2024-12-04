@@ -3,58 +3,64 @@ public class Dom {
     public Drzwi[] drzwi;
     public Okno[] okna;
     public Pomieszczenie[] pokoje;
-    public Pomieszczenie[] kuchni;
+    public Pomieszczenie[] kuchnie;
     public Pomieszczenie[] lazienki;
 
+    public Dom(int iloscPokoi, int iloscKuchni, int iloscLazienek, int iloscDrzwi, int iloscOkien) {
+        tworzeniePokoi(iloscPokoi);
+        tworzenieKuchni(iloscKuchni);
+        tworzenieLazienki(iloscLazienek);
+        tworzenieDrzwi(iloscDrzwi);
+        tworzenieOkien(iloscOkien);
+    }
 
-//    public Dom()
-//    {
-//        pokoje = new Pomieszczenie[1];
-//        lazienki = new Pomieszczenie[1];
-//        kuchni = new Pomieszczenie[1];
-//
-//        pokoje[0] = new Pomieszczenie(TypPomieszczenia.Pokoj, 1);
-//        lazienki[0] = new Pomieszczenie(TypPomieszczenia.Lazienka, 1);
-//        kuchni[0] = new Pomieszczenie(TypPomieszczenia.Kuchnia, 1);
-//
-////        drzwiDoPomieszczenia(pokoje[0], lazienki[0]);
-////        drzwiDoPomieszczenia(pokoje[0], kuchni[0]);
-//    }
-//
-//
-//    public void tworzenieDrzwi(int iloscDrzwi){
-//        drzwi= new Drzwi[iloscDrzwi];
-//        for(int i=0;i<iloscDrzwi;i++){
-//            drzwi[i]=new Drzwi();
-//        }
-//    }
-
-    public void tworzenieokna(int iloscOkien){
-        okna= new Okno[iloscOkien];
-        for(int i=0;i<iloscOkien;i++){
-            okna[i]=new Okno();
+    public void tworzenieDrzwi(int iloscDrzwi) {
+        drzwi = new Drzwi[iloscDrzwi];
+        for (int i = 0; i < iloscDrzwi; i++) {
+            drzwi[i] = new Drzwi();
         }
     }
 
-    public void tworzeniePokoi(int iloscPokoi){
-        pokoje= new Pokoj[iloscPokoi];
-        for(int i=0;i<iloscPokoi;i++){
-            pokoje[i]=new Pokoj();
+    public void tworzenieOkien(int iloscOkien) {
+        okna = new Okno[iloscOkien];
+        for (int i = 0; i < iloscOkien; i++) {
+            okna[i] = new Okno();
         }
     }
 
-    public void tworzenieKuchni(int iloscKuchni){
-        kuchni= new Kuchnia[iloscKuchni];
-        for(int i=0;i<iloscKuchni;i++){
-            kuchni[i]=new Kuchnia();
+    public void tworzeniePokoi(int iloscPokoi) {
+        pokoje = new Pomieszczenie[iloscPokoi];
+        for (int i = 0; i < iloscPokoi; i++) {
+            pokoje[i] = new Pokoj("Pokój " + (i + 1));
         }
     }
 
-    public void tworzenieLazienki(int iloscLazienek){
-        lazienki= new Lazienka[iloscLazienek];
-        for(int i=0;i<iloscLazienek;i++){
-            lazienki[i]=new Lazienka();
+    public void tworzenieKuchni(int iloscKuchni) {
+        kuchnie = new Pomieszczenie[iloscKuchni];
+        for (int i = 0; i < iloscKuchni; i++) {
+            kuchnie[i] = new Kuchnia("Kuchnia " + (i + 1));
         }
     }
 
+    public void tworzenieLazienki(int iloscLazienek) {
+        lazienki = new Pomieszczenie[iloscLazienek];
+        for (int i = 0; i < iloscLazienek; i++) {
+            lazienki[i] = new Lazienka("Łazienka " + (i + 1));
+        }
+    }
+
+    public void przypiszDrzwi() {
+        if (lazienki.length > 0 && pokoje.length > 0) {
+            lazienki[0].tworzenieDrzwi(1, new Pomieszczenie[]{pokoje[0]});
+        }
+        if (kuchnie.length > 0 && lazienki.length > 0) {
+            kuchnie[0].tworzenieDrzwi(1, new Pomieszczenie[]{lazienki[0]});
+        }
+        if (pokoje.length > 1) {
+            pokoje[0].tworzenieDrzwi(1, new Pomieszczenie[]{pokoje[1]});
+        }
+        if (lazienki.length > 0 && kuchnie.length > 0) {
+            lazienki[0].tworzenieDrzwi(1, new Pomieszczenie[]{kuchnie[0]});
+        }
+    }
 }

@@ -1,32 +1,29 @@
 public class Drzwi {
+    public boolean otwarte;
+    public Pomieszczenie docelowe;
 
-    public boolean otwarteDrzwi= false;
-    public Pomieszczenie doPomieszczenia;
-
-//    public Pomieszczenie prowadzaDo;
-//    public void funkcjonkaDoDrzwi(Pomieszczenie prowadzaDo)
-//    {
-//        this.prowadzaDo=prowadzaDo;
-//        System.out.println("Te drzwi prowadza do: "+prowadzaDo.typ);
-//    }
+    public Drzwi(Pomieszczenie docelowe) {
+        this.otwarte = false; // Domyślnie drzwi są zamknięte
+        this.docelowe = docelowe;
+    }
 
     public Drzwi() {
-        this.otwarteDrzwi = false;
-    }
-    public void przejdzDoPomieszczenia() {
-        System.out.println("Przechodzisz do: " + doPomieszczenia.typ+" z ");
+        this.otwarte = false; // Domyślnie drzwi są zamknięte
+        this.docelowe = null; // Brak docelowego pomieszczenia
     }
 
-    public void czyOtwarte() {
-        if(otwarteDrzwi){
-            otwarteDrzwi=true;
-            System.out.println("Drzwi prowadzace zostaly otwarte");
-        }else{
-            System.out.println("Drzwi prowadzace sa juz zamkniete");
+    public void otworzDrzwi() {
+        this.otwarte = true;
+        System.out.println("Drzwi zostały otwarte.");
+    }
+
+    public void przejdzDoPomieszczenia(Pomieszczenie zPomieszczenia) {
+        if (this.otwarte && this.docelowe != null) {
+            System.out.println("Przechodzenie do: " + docelowe.nazwa + " z " + zPomieszczenia.nazwa);
+        } else if (!this.otwarte) {
+            System.out.println("Drzwi są zamknięte. Otwórz drzwi, aby przejść.");
+        } else {
+            System.out.println("Brak docelowego pomieszczenia.");
         }
     }
-    public void stworzPowiazanie(Pomieszczenie pomieszczenie){
-        this.doPomieszczenia=pomieszczenie;
-    }
-
 }
